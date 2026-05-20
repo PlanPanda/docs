@@ -1,49 +1,55 @@
-# Starlight Starter Kit: Basics
+# SolidPlan Docs
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+คู่มือการใช้งาน SolidPlan — แอปพลิเคชันสำหรับตัวแทนประกันชีวิต
 
-```
-pnpm create astro@latest -- --template starlight
-```
+เว็บไซต์: [solidplan.ai](https://solidplan.ai)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## เกี่ยวกับโปรเจกต์
 
-## 🚀 Project Structure
+เว็บไซต์เอกสารประกอบการใช้งาน (User Documentation) สร้างด้วย [Astro](https://astro.build) + [Starlight](https://starlight.astro.build)
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+เนื้อหาทั้งหมดเป็นภาษาไทย ครอบคลุมการใช้งานทุกฟีเจอร์ของ SolidPlan:
 
-```
-.
-├── public/
+| ส่วน | เนื้อหา |
+| ------ | --------- |
+| เริ่มต้นใช้งาน | ขั้นตอนสมัคร เพิ่มลูกค้า เริ่มบันทึกกิจกรรม |
+| เข้าสู่ระบบ | สมัครสมาชิก, login, ลืมรหัสผ่าน, สลับธีม |
+| Dashboard | สถิติสรุป, Yearly Heatmap, Radar Chart, ลูกค้าล่าสุด |
+| ลูกค้า | รายชื่อ, เพิ่มลูกค้า, รายละเอียด, บันทึกกิจกรรม 5 ขั้นตอน |
+| ปฏิทิน | วางแผนนัดหมาย ติดตามกิจกรรม |
+| แพ็คเกจ | แพ็คเกจที่ใช้งาน, เติมเงิน QR PromptPay, ประวัติการเติมเงิน |
+| ทีมงาน | เพิ่มเพื่อน, โครงสร้างองค์กร, โปรไฟล์ตัวแทน, ดูผลงาน |
+| ตั้งค่า | โปรไฟล์, รหัสผ่าน, ใบเสร็จ |
+
+## แหล่งเนื้อหา
+
+เนื้อหาต้นฉบับอยู่ที่ `../smart/docs/` ประกอบด้วย:
+
+- ไฟล์คู่มือการใช้งาน (getting-started, login, dashboard, calendar, customer/, package/, team/, settings/)
+- ADR (Architecture Decision Records) — บันทึกการตัดสินใจทางเทคนิคของระบบ
+
+## โครงสร้างโปรเจกต์
+
+```text
 ├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
+│   ├── content/docs/   ← เนื้อหาเอกสาร (MDX/Markdown)
+│   ├── assets/         ← รูปภาพที่ผ่าน Astro processing
 │   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+├── public/             ← Static assets
+├── astro.config.mjs    ← Starlight config + sidebar
+└── package.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Commands
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+| คำสั่ง | การทำงาน |
+| --------- | ---------- |
+| `pnpm install` | ติดตั้ง dependencies |
+| `pnpm dev` | รัน dev server ที่ `localhost:4321` |
+| `pnpm build` | Build production ไปที่ `./dist/` |
+| `pnpm preview` | Preview build ก่อน deploy |
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## เพิ่มเติม
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- [Starlight Documentation](https://starlight.astro.build/)
+- [Astro Documentation](https://docs.astro.build)
