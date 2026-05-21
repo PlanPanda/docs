@@ -75,35 +75,40 @@ export default defineConfig({
       ],
       sidebar: [
         { label: "🏠 หน้าหลัก", slug: "index" },
+        { label: "🎁 มีอะไรใหม่", slug: "release-notes" },
         {
-          label: "🎁 มีอะไรใหม่",
-          slug: "release-notes",
+          label: "🧭 เริ่มที่นี่",
+          items: [
+            { label: "เริ่มแบบเร็ว 10 นาที", slug: "start/quick-start" },
+            { label: "ภาพรวมระบบ", slug: "start/overview" },
+            { label: "เข้าสู่ระบบ", slug: "start/login" },
+          ],
         },
         {
-          label: "🚀 เริ่มต้นใช้งาน",
+          label: "✅ ใช้งานทุกวัน",
           items: [
-            { label: "เริ่มต้นใช้งาน", slug: "getting-started" },
-            { label: "เข้าสู่ระบบ", slug: "login" },
-            { label: "Dashboard", slug: "dashboard" },
+            { label: "Dashboard", slug: "daily/dashboard" },
+            { label: "ปฏิทิน", slug: "daily/calendar" },
           ],
         },
         {
           label: "👥 ลูกค้า",
           items: [
-            { label: "ภาพรวม", slug: "customer/overview" },
-            { label: "รายชื่อลูกค้า", slug: "customer/customer-list" },
-            { label: "เพิ่มลูกค้า", slug: "customer/add-customer" },
-            { label: "รายละเอียดลูกค้า", slug: "customer/customer-detail" },
-            { label: "กิจกรรม", slug: "customer/activities" },
+            { label: "ภาพรวม", slug: "customers/overview" },
+            { label: "รายชื่อลูกค้า", slug: "customers/list" },
+            { label: "เพิ่มลูกค้า", slug: "customers/add" },
+            { label: "รายละเอียดลูกค้า", slug: "customers/detail" },
+            { label: "บันทึกกิจกรรม", slug: "customers/activities" },
+            { label: "Workflow หลังคุยลูกค้า", slug: "customers/workflow-after-call" },
+            { label: "PDPA & ความเป็นส่วนตัว", slug: "customers/pdpa" },
           ],
         },
-        { label: "🗓️ ปฏิทิน", slug: "calendar" },
         {
-          label: "💰 แพ็คเกจ",
+          label: "💰 แพ็คเกจ & ใบเสร็จ",
           items: [
-            { label: "ภาพรวม", slug: "package/overview" },
-            { label: "เติมเงิน", slug: "package/payment" },
-            { label: "การเรียกเก็บเงิน", slug: "package/billing" },
+            { label: "ภาพรวมแพ็คเกจ", slug: "billing/overview" },
+            { label: "เติมเงิน", slug: "billing/topup" },
+            { label: "ประวัติการชำระเงิน", slug: "billing/history" },
           ],
         },
         {
@@ -114,13 +119,22 @@ export default defineConfig({
             { label: "จัดการเพื่อน", slug: "team/manage-friends" },
             { label: "โครงสร้างองค์กร", slug: "team/org-hierarchy" },
             { label: "โปรไฟล์ตัวแทน", slug: "team/agent-profile" },
+            { label: "ตัวเลขทีม & ความเป็นส่วนตัว", slug: "team/metrics-and-privacy" },
           ],
         },
         {
           label: "⚙️ ตั้งค่า",
           items: [
-            { label: "โปรไฟล์", slug: "settings/profile" },
-            { label: "ใบเสร็จ", slug: "settings/receipt-settings" },
+            { label: "ภาพรวมตั้งค่า", slug: "settings/overview" },
+            { label: "ตั้งค่าโปรไฟล์", slug: "settings/profile" },
+            { label: "ตั้งค่าใบเสร็จ", slug: "settings/receipt" },
+          ],
+        },
+        {
+          label: "❓ ช่วยเหลือ",
+          items: [
+            { label: "คำถามที่พบบ่อย", slug: "help/faq" },
+            { label: "กิจกรรม 5 ขั้นตอน", slug: "help/5-steps" },
           ],
         },
       ],
