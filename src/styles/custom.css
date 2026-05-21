@@ -1,6 +1,49 @@
-/* SolidPlan custom accent — Brand Coral from DESIGN-clay.md */
-:root {
+/* SolidPlan custom theme — based on DESIGN-clay.md */
+
+/* ========== Light Mode Only ========== */
+html[data-theme="light"]:root {
+  /* Accent: Brand Pink */
   --sl-color-accent: #ff4d8b;
   --sl-color-accent-high: #ff4d8b;
   --sl-color-accent-low: #ff4d8b;
+
+  /* Backgrounds: Canvas & Surface Soft */
+  --sl-color-bg: #fffaf0;
+  --sl-color-bg-nav: #fffaf0;
+  --sl-color-bg-sidebar: #faf5e8;
+  --sl-color-bg-inline-code: #f5f0e0;
+  --sl-color-bg-accent: #ff4d8b;
+
+  /* Text */
+  --sl-color-text: #0a0a0a;
+  --sl-color-text-accent: #ff4d8b;
+}
+
+/* ========== Dark Mode ========== */
+html[data-theme="dark"]:root {
+  /* Accent: Brand Pink สว่างขึ้นให้ชัดบนพื้นหลังเข้ม */
+  --sl-color-accent: #ff96be;
+  --sl-color-accent-high: #ffaac8;
+  --sl-color-accent-low: #e8457b;
+
+  /* Text accent */
+  --sl-color-text-accent: #ff96be;
+
+  /* Background tint for active/hover accent states */
+  --sl-color-bg-accent: rgba(255, 150, 190, 0.15);
+}
+
+/* ========== Starlight Sidebar Active Link Override ========== */
+/* บังคับให้ active link ใน sidebar มี contrast สูงใน dark mode */
+html[data-theme="dark"] .sidebar-content a[aria-current="page"],
+html[data-theme="dark"] starlight-menu-item [aria-current="page"] a {
+  color: #ffffff !important;
+  font-weight: 600;
+  background-color: rgba(255, 150, 190, 0.12);
+  border-radius: 6px;
+}
+
+/* Hover บน sidebar links ใน dark mode */
+html[data-theme="dark"] .sidebar-content a:hover {
+  color: #ffaac8;
 }
