@@ -65,6 +65,7 @@ export default defineConfig({
           },
         },
       ],
+      customCss: ["./src/styles/custom.css"],
       social: [
         {
           icon: "github",
