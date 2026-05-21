@@ -7,6 +7,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "SolidPlan",
+      logo: {
+        src: "./src/assets/logo.png",
+        alt: "SolidPlan Logo",
+      },
       social: [
         {
           icon: "github",
@@ -17,7 +21,7 @@ export default defineConfig({
       sidebar: [
         { label: "🏠 หน้าหลัก", slug: "index" },
         {
-          label: "📰 มีอะไรใหม่",
+          label: "🎁 มีอะไรใหม่",
           slug: "release-notes",
         },
         {
@@ -38,7 +42,7 @@ export default defineConfig({
             { label: "กิจกรรม", slug: "customer/activities" },
           ],
         },
-        { label: "📅 ปฏิทิน", slug: "calendar" },
+        { label: "🗓️ ปฏิทิน", slug: "calendar" },
         {
           label: "💰 แพ็คเกจ",
           items: [
@@ -57,14 +61,13 @@ export default defineConfig({
             { label: "โปรไฟล์ตัวแทน", slug: "team/agent-profile" },
           ],
         },
-        // Phase 4
-        // {
-        // 	label: '⚙️ ตั้งค่า',
-        // 	items: [
-        // 		{ label: 'โปรไฟล์', slug: 'settings/profile' },
-        // 		{ label: 'ใบเสร็จ', slug: 'settings/receipt-settings' },
-        // 	],
-        // },
+        {
+          label: "⚙️ ตั้งค่า",
+          items: [
+            { label: "โปรไฟล์", slug: "settings/profile" },
+            { label: "ใบเสร็จ", slug: "settings/receipt-settings" },
+          ],
+        },
       ],
     }),
   ],
