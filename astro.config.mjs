@@ -79,7 +79,7 @@ export default defineConfig({
         {
           label: "🧭 เริ่มที่นี่",
           items: [
-            { label: "เริ่มแบบเร็ว 10 นาที", slug: "start/quick-start" },
+            { label: "เริ่มใช้ใน 10 นาที", slug: "start/quick-start" },
             { label: "ภาพรวมระบบ", slug: "start/overview" },
             { label: "เข้าสู่ระบบ", slug: "start/login" },
           ],
@@ -99,7 +99,10 @@ export default defineConfig({
             { label: "เพิ่มลูกค้า", slug: "customers/add" },
             { label: "รายละเอียดลูกค้า", slug: "customers/detail" },
             { label: "บันทึกกิจกรรม", slug: "customers/activities" },
-            { label: "Workflow หลังคุยลูกค้า", slug: "customers/workflow-after-call" },
+            {
+              label: "Workflow หลังคุยลูกค้า",
+              slug: "customers/workflow-after-call",
+            },
             { label: "PDPA & ความเป็นส่วนตัว", slug: "customers/pdpa" },
           ],
         },
@@ -119,7 +122,10 @@ export default defineConfig({
             { label: "จัดการเพื่อน", slug: "team/manage-friends" },
             { label: "โครงสร้างองค์กร", slug: "team/org-hierarchy" },
             { label: "โปรไฟล์ตัวแทน", slug: "team/agent-profile" },
-            { label: "ตัวเลขทีม & ความเป็นส่วนตัว", slug: "team/metrics-and-privacy" },
+            {
+              label: "ตัวเลขทีม & ความเป็นส่วนตัว",
+              slug: "team/metrics-and-privacy",
+            },
           ],
         },
         {

@@ -3,20 +3,27 @@ title: รายชื่อลูกค้า
 description: หาใครก็เจอ ไม่ต้องเลื่อนหาทั้งชีวิต
 ---
 
+import { Image } from 'astro:assets';
+import customerListScreenshot from '../../../assets/customer/customer-list.png';
+import customerSearchBarScreenshot from '../../../assets/customer/customer-search-bar.png';
+import customerSortButtonScreenshot from '../../../assets/customer/customer-sort-button.png';
+import customerCardScreenshot from '../../../assets/customer/customer-card.png';
+import customerCardAnnotatedScreenshot from '../../../assets/customer/customer-card-annotated.png';
+
 เมื่อลูกค้ามีหลายสิบคน การหา "คนนั้นคนนี้" ต้องไม่ใช้เวลาเกิน 5 วินาที SolidPlan มีค้นหา กรอง และเรียงลำดับที่ช่วยให้คุณเจอคนที่ต้องการได้ทันที 😊
 
-{/* TODO: screenshot customer/customer-list.png */}
+<Image src={customerListScreenshot} alt="หน้ารายชื่อลูกค้า" />
 
 ## ค้นหาลูกค้า
 
-{/* TODO: screenshot customer/search-bar.png */}
+<Image src={customerSearchBarScreenshot} alt="แถบค้นหาและกรองลูกค้า" />
 
 - พิมพ์ชื่อ, เบอร์โทร, หรือคำในโน๊ต ที่ช่องค้นหาด้านบน
 - ระบบจะแสดงผลลัพธ์ทันทีขณะพิมพ์ — ไม่ต้องกดค้นหา
 
 ## กรองรายชื่อ
 
-{/* TODO: screenshot customer/filter-bar.png */}
+<Image src={customerSearchBarScreenshot} alt="แถบค้นหาและกรองลูกค้า" />
 
 ### กรองตามประเภท
 
@@ -36,7 +43,7 @@ description: หาใครก็เจอ ไม่ต้องเลื่อ
 
 ## เรียงลำดับ
 
-{/* TODO: screenshot customer/sort-buttons.png */}
+<Image src={customerSortButtonScreenshot} alt="ปุ่มเรียงลำดับรายชื่อ" />
 
 กดหัวข้อเรียงลำดับที่ด้านบนรายชื่อ:
 
@@ -50,7 +57,7 @@ description: หาใครก็เจอ ไม่ต้องเลื่อ
 
 ## เลือกลูกค้า
 
-{/* TODO: screenshot customer/customer-card.png */}
+<Image src={customerCardScreenshot} alt="การเลือกลูกค้าหลายคนพร้อมกัน" />
 
 - **คลิกที่การ์ด** — เลือกลูกค้าคนเดียว → ดูรายละเอียดด้านขวา
 - **ติ๊ก checkbox** — เลือกหลายคนเพื่อดำเนินการพร้อมกัน (เปลี่ยนประเภท, ลบ)
