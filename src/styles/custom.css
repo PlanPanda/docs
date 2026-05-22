@@ -47,3 +47,21 @@ html[data-theme="dark"] starlight-menu-item [aria-current="page"] a {
 html[data-theme="dark"] .sidebar-content a:hover {
   color: #ffaac8;
 }
+
+/* ========== Brand Ambassador Hero Image ========== */
+/* ซ่อนรูปบน mobile (จอ < 768px) แสดงเฉพาะ Desktop และ iPad */
+.hero-brand-image {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .hero-brand-image {
+    display: block !important;
+    height: auto !important;
+    max-height: 520px;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+}
