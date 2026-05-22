@@ -4,7 +4,7 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://docs.solidplan.ai",
+  site: "https://solidplan.ai",
   integrations: [
     starlight({
       title: "SolidPlan",
@@ -67,13 +67,9 @@ export default defineConfig({
         },
       ],
       customCss: ["./src/styles/custom.css"],
-      social: [
-        {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com/withastro/starlight",
-        },
-      ],
+      components: {
+        SocialIcons: "./src/components/SocialIcons.astro",
+      },
       sidebar: [
         { label: "🏠 หน้าหลัก", slug: "index" },
         { label: "🎁 มีอะไรใหม่", slug: "release-notes" },
