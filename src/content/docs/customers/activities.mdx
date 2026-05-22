@@ -5,10 +5,13 @@ description: ติดตามทุกจังหวะการขาย ไ
 
 import { Image } from 'astro:assets';
 import customerNewActivity from '../../../assets/customer/customer-new-activity.png';
+import customerNewActivityPanel from '../../../assets/customer/customer-new-activity-panel.png';
+import activityTimeline from '../../../assets/customer/activity-timeline.png';
+import activitiesGrid from '../../../assets/customer/activities-grid.png';
 
 ทุกครั้งที่คุณติดต่อลูกค้า ไม่ว่าจะโทร นัดเจอ ส่งข้อเสนอ หรือปิดดีล — ให้บันทึกไว้ เพราะกิจกรรมที่คุณบันทึกวันนี้ จะเป็นข้อมูลที่ช่วยให้คุณรู้ว่า "คนนี้อยู่จุดไหนของกระบวนการขายแล้ว" 😊
 
-{/* TODO: screenshot customer/activities-list.png */}
+<Image src={customerNewActivityPanel} alt="รายการกิจกรรมของลูกค้า" />
 
 ## ขั้นตอนการขาย 5 ขั้น
 
@@ -63,7 +66,7 @@ SolidPlan แบ่งกิจกรรมเป็น 5 ขั้นตอน 
 
 ## สรุปกิจกรรมแบบ Grid
 
-{/* TODO: screenshot customer/activities-grid.png */}
+<Image src={activitiesGrid} alt="ตารางสรุปกิจกรรมแบบ Grid" />
 
 บนหน้ารายละเอียดย่อ (Detail Panel) จะมีตารางแสดงกิจกรรมแบบกราฟ — แต่ละแถวเป็นประเภทกิจกรรม แต่ละคอลัมน์เป็นวัน จุดสีต่าง ๆ บอกว่ามีกิจกรรมในวันนั้น ช่วยให้เห็นภาพรวมได้ทันทีว่า "เราทำอะไรกับลูกค้าคนนี้ไปบ้าง"
 
