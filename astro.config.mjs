@@ -86,7 +86,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "✅ ใช้งานทุกวัน",
+          label: "✅ ใช้งานประจำวัน",
           items: [
             { label: "Dashboard", slug: "daily/dashboard" },
             { label: "ปฏิทิน", slug: "daily/calendar" },
