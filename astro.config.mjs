@@ -96,6 +96,7 @@ export default defineConfig({
             { label: "รายชื่อลูกค้า", slug: "customers/list" },
             { label: "เพิ่มลูกค้า", slug: "customers/add" },
             { label: "รายละเอียดลูกค้า", slug: "customers/detail" },
+            { label: "ไฟล์เอกสาร", slug: "customers/documents" },
             { label: "บันทึกกิจกรรม", slug: "customers/activities" },
             {
               label: "Workflow หลังคุยลูกค้า",
@@ -116,6 +117,7 @@ export default defineConfig({
           label: "🤝 ทีมงาน",
           items: [
             { label: "ภาพรวม", slug: "team/overview" },
+            { label: "แชร์ให้ทีม", slug: "team/campaign" },
             { label: "เพิ่มเพื่อน", slug: "team/add-friend" },
             { label: "จัดการเพื่อน", slug: "team/manage-friends" },
             { label: "โครงสร้างองค์กร", slug: "team/org-hierarchy" },
@@ -127,10 +129,22 @@ export default defineConfig({
           ],
         },
         {
+          label: "💼 ยอดขาย",
+          items: [{ label: "บันทึกยอดขาย", slug: "sales/sales-records" }],
+        },
+        {
+          label: "📦 นำเข้า / ส่งออก",
+          items: [
+            { label: "นำเข้าข้อมูล", slug: "import" },
+            { label: "ส่งออกข้อมูล", slug: "export" },
+          ],
+        },
+        {
           label: "⚙️ ตั้งค่า",
           items: [
             { label: "ภาพรวมตั้งค่า", slug: "settings/overview" },
             { label: "ตั้งค่าโปรไฟล์", slug: "settings/profile" },
+            { label: "วิธีเข้าสู่ระบบ", slug: "settings/auth-methods" },
             { label: "ตั้งค่าใบเสร็จ", slug: "settings/receipt" },
           ],
         },

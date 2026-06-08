@@ -65,3 +65,21 @@ html[data-theme="dark"] .sidebar-content a:hover {
     border-radius: 12px;
   }
 }
+
+/* ========== Screenshot Placeholder ========== */
+.screenshot-placeholder {
+  margin: 1rem 0 1.5rem;
+  padding: 1.25rem 1rem;
+  border: 1px dashed #c8c2b3;
+  border-radius: 12px;
+  background: #f1eee6;
+  color: #5f584b;
+  text-align: center;
+  font-weight: 500;
+}
+
+html[data-theme='dark'] .screenshot-placeholder {
+  border-color: #5e5a62;
+  background: #2a2730;
+  color: #d1c9d9;
+}
