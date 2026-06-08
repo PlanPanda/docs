@@ -137,6 +137,8 @@ export default defineConfig({
           items: [
             { label: "นำเข้าข้อมูล", slug: "import" },
             { label: "ส่งออกข้อมูล", slug: "export" },
+            { label: "ใช้ AI ช่วยนำเข้า", slug: "import-ai" },
+            { label: "ใช้ AI ช่วยวิเคราะห์", slug: "export-ai" },
           ],
         },
         {
