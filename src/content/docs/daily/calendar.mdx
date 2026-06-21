@@ -5,6 +5,10 @@ description: วางแผนนัดหมาย ไม่ลืมทุก
 
 import { Image } from 'astro:assets';
 import calendarScreenshot from '../../../assets/calendar/calendar.png';
+import threeViewsScreenshot from '../../../assets/calendar/three-views.png';
+import navigationButtonsScreenshot from '../../../assets/calendar/navigation-buttons.png';
+import eventBlocksScreenshot from '../../../assets/calendar/event-blocks.png';
+import changeStageScreenshot from '../../../assets/calendar/change-stage.png';
 
 การขายประกันเป็นเรื่องของ "จังหวะ" — นัดวันนี้ ตามวันนู้น สัปดาห์หน้าต้องเสนอขาย ถ้าไม่จดไว้ มีโอกาสลืมสูงมาก SolidPlan ช่วยจัดระเบียบทุกนัดหมายไว้ในปฏิทิน เปิดมาดูทีไรก็รู้เลยว่าวันนี้-สัปดาห์นี้-เดือนนี้ต้องทำอะไรบ้าง 😊
 
@@ -12,7 +16,7 @@ import calendarScreenshot from '../../../assets/calendar/calendar.png';
 
 ## มุมมองปฏิทิน 3 แบบ
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: มุมมองรายสัปดาห์/เดือน/ปี (calendar/three-views)</div>
+<Image src={threeViewsScreenshot} alt="มุมมองรายสัปดาห์ เดือน และปี" />
 
 สลับมุมมองได้ตลอดเวลา ตามที่ต้องการ:
 
@@ -24,14 +28,14 @@ import calendarScreenshot from '../../../assets/calendar/calendar.png';
 
 ## เปลี่ยนช่วงเวลา
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: ปุ่มเลื่อนช่วงเวลาและปุ่มวันนี้ (calendar/navigation-buttons)</div>
+<Image src={navigationButtonsScreenshot} alt="ปุ่มเลื่อนช่วงเวลาและปุ่มวันนี้" />
 
 - กด **ลูกศรซ้าย/ขวา** เพื่อย้อนไป/ไปข้างหน้า (สัปดาห์, เดือน, ปี)
 - กด **"วันนี้"** เพื่อกลับมาช่วงเวลาปัจจุบัน
 
 ## ดูกิจกรรมบนปฏิทิน
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: บล็อกกิจกรรมบนปฏิทิน (calendar/event-blocks)</div>
+<Image src={eventBlocksScreenshot} alt="บล็อกกิจกรรมบนปฏิทิน" />
 
 กิจกรรมแสดงเป็นบล็อกสีบนปฏิทิน — สีต่างกันตามประเภท:
 
@@ -45,7 +49,7 @@ import calendarScreenshot from '../../../assets/calendar/calendar.png';
 
 ## เปลี่ยนสถานะกิจกรรม
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: เปลี่ยนสถานะกิจกรรมบนปฏิทิน (calendar/change-stage)</div>
+<Image src={changeStageScreenshot} alt="เปลี่ยนสถานะกิจกรรมบนปฏิทิน" />
 
 จากหน้าปฏิทิน คุณสามารถเปลี่ยนสถานะกิจกรรมได้ — เช่น จาก "เสนอขาย" เป็น "ปิดการขาย" เมื่อลูกค้าตัดสินใจซื้อแล้ว
 

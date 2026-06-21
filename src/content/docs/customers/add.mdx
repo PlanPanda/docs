@@ -6,6 +6,7 @@ description: ไม่พลาดทุกคนที่เจอ
 import { Image } from 'astro:assets';
 import customerNewScreenshot from '../../../assets/customer/customer-new.png';
 import customerDetailPersonal from '../../../assets/customer/customer_detail_personal.png';
+import changeTypeScreenshot from '../../../assets/customers/change-type.jpg';
 
 เมื่อไหร่ก็ตามที่คุณได้รู้จักคนใหม่ — ไม่ว่าจะจากงานนำเสนอ เพื่อนแนะนำ หรือคนที่สนใจสอบถาม — ให้เพิ่มเข้าระบบทันที เพราะคนที่วันนี้ "ยังไม่สนใจ" อาจเป็นลูกค้าสำคัญในอีก 6 เดือนข้างหน้า 😊
 
@@ -48,7 +49,7 @@ import customerDetailPersonal from '../../../assets/customer/customer_detail_per
 
 ## เปลี่ยนประเภทลูกค้า
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: ปุ่มเปลี่ยนประเภทลูกค้า (customers/change-type)</div>
+<Image src={changeTypeScreenshot} alt="ปุ่มเปลี่ยนประเภทลูกค้า" />
 
 เมื่อผู้มุ่งหวังตัดสินใจซื้อประกัน:
 
@@ -57,16 +58,6 @@ import customerDetailPersonal from '../../../assets/customer/customer_detail_per
 3. สถานะจะเปลี่ยนทันที
 
 ทำย้อนกลับได้เช่นกัน — กด **"เป็นผู้มุ่งหวัง"** ถ้าต้องการเปลี่ยนกลับ
-
-## เพิ่มหลายคนพร้อมกัน
-
-<div className="screenshot-placeholder">วางภาพหน้าจอ: แถบจัดการหลายรายชื่อพร้อมกัน (customers/batch-panel)</div>
-
-เลือกลูกค้าหลายคนโดยกด checkbox ที่รายชื่อ → จะมีแถบด้านล่างปรากฏขึ้น:
-
-- **เปลี่ยนเป็นลูกค้า** — เปลี่ยนหลายคนพร้อมกัน
-- **เปลี่ยนเป็นผู้มุ่งหวัง** — เปลี่ยนกลับหลายคนพร้อมกัน
-- **ลบรายการที่เลือก** — ลบหลายคนพร้อมกัน
 
 ## เคล็ดลับเล็ก ๆ 💡
 

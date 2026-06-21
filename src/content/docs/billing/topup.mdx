@@ -3,15 +3,22 @@ title: เติมเงิน
 description: เติมเงินง่าย ๆ ด้วย QR Code
 ---
 
+import { Image } from 'astro:assets';
+import paymentQr from '../../../assets/billing/payment-qr.png';
+import selectMonths from '../../../assets/billing/select-months.png';
+import promoCode from '../../../assets/billing/promo-code.png';
+import qrLarge from '../../../assets/billing/qr-large.png';
+import teamCode from '../../../assets/billing/team-code.png';
+
 เติมเงิน SolidPlan ง่ายแค่สแกน QR Code — ไม่ต้องกรอกข้อมูลบัตร ไม่ต้องโอนผ่านธนาคาร สแกน จ่าย เสร็จ ใช้ได้ทันที 😊
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: หน้าชำระเงินหลักพร้อม QR (billing/payment-qr)</div>
+<Image src={paymentQr} alt="หน้าชำระเงินหลักพร้อม QR" />
 
 ## วิธีเติมเงิน
 
 ### 1. เลือกจำนวนเดือน
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: เลือกจำนวนเดือนที่ต้องการเติม (billing/select-months)</div>
+<Image src={selectMonths} alt="เลือกจำนวนเดือนที่ต้องการเติม" />
 
 - เลือกจำนวนเดือนที่ต้องการเติม
 - ระบบจะคำนวณยอดรวมให้ทันที
@@ -19,7 +26,7 @@ description: เติมเงินง่าย ๆ ด้วย QR Code
 
 ### 2. ใช้โปรโมชัน (ถ้ามี)
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: ช่องกรอกรหัสโปรโมชัน (billing/promo-code)</div>
+<Image src={promoCode} alt="ช่องกรอกรหัสโปรโมชัน" />
 
 - กรอก **รหัสโปรโมชัน** ที่ได้รับ
 - กด **"ใช้"**
@@ -27,7 +34,7 @@ description: เติมเงินง่าย ๆ ด้วย QR Code
 
 ### 3. สแกน QR Code ชำระเงิน
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: QR Code ขนาดใหญ่สำหรับสแกนจ่าย (billing/qr-large)</div>
+<Image src={qrLarge} alt="QR Code ขนาดใหญ่สำหรับสแกนจ่าย" />
 
 - เปิดแอปธนาคารบนมือถือ
 - สแกน **QR Code** ที่แสดงบนหน้าจอ
@@ -46,7 +53,7 @@ description: เติมเงินง่าย ๆ ด้วย QR Code
 
 ## ใช้รหัสเชิญเพื่อน (Team Code)
 
-<div className="screenshot-placeholder">วางภาพหน้าจอ: ช่องกรอก Team Code ตอนชำระเงิน (billing/team-code)</div>
+<Image src={teamCode} alt="ช่องกรอก Team Code ตอนชำระเงิน" />
 
 ถ้ามีเพื่อนแนะนำให้มาใช้ SolidPlan:
 
