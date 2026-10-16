@@ -86,7 +86,7 @@ export default defineConfig({
         {
           label: "ใช้งานประจำวัน",
           items: [
-            { label: "Dashboard", slug: "daily/dashboard" },
+            { label: "รายงาน", slug: "daily/report" },
             { label: "ปฏิทิน", slug: "daily/calendar" },
           ],
         },
@@ -94,11 +94,12 @@ export default defineConfig({
           label: "ลูกค้า",
           items: [
             { label: "ภาพรวม", slug: "customers/overview" },
-            { label: "รายชื่อลูกค้า", slug: "customers/list" },
             { label: "เพิ่มลูกค้า", slug: "customers/add" },
+            { label: "รายชื่อลูกค้า", slug: "customers/list" },
             { label: "รายละเอียดลูกค้า", slug: "customers/detail" },
+            { label: "กิจกรรม", slug: "customers/activities" },
+            { label: "บันทึกกรมธรรม์", slug: "customers/policies" },
             { label: "ไฟล์เอกสาร", slug: "customers/documents" },
-            { label: "บันทึกกิจกรรม", slug: "customers/activities" },
             {
               label: "Workflow หลังคุยลูกค้า",
               slug: "customers/workflow-after-call",
@@ -107,26 +108,13 @@ export default defineConfig({
           ],
         },
         {
-          label: "แพ็คเกจ & ใบเสร็จ",
+          label: "ผู้ช่วย AI",
           items: [
-            { label: "ภาพรวมแพ็คเกจ", slug: "billing/overview" },
-            { label: "เติมเงิน", slug: "billing/topup" },
-            { label: "ประวัติการชำระเงิน", slug: "billing/history" },
-          ],
-        },
-        {
-          label: "ทีมงาน",
-          items: [
-            { label: "ภาพรวม", slug: "team/overview" },
-            { label: "แชร์ให้ทีม", slug: "team/campaign" },
-            { label: "เพิ่มเพื่อน", slug: "team/add-friend" },
-            { label: "จัดการเพื่อน", slug: "team/manage-friends" },
-            { label: "โครงสร้างองค์กร", slug: "team/org-hierarchy" },
-            { label: "โปรไฟล์ตัวแทน", slug: "team/agent-profile" },
-            {
-              label: "ตัวเลขทีม & ความเป็นส่วนตัว",
-              slug: "team/metrics-and-privacy",
-            },
+            { label: "ภาพรวมผู้ช่วย AI", slug: "ai/assistant" },
+            { label: "ค้นหาด้วย AI", slug: "ai/search" },
+            { label: "การ์ดอวยพรวันเกิด", slug: "ai/birthday-card" },
+            { label: "สร้างกรมธรรม์จากไฟล์", slug: "ai/policy-from-file" },
+            { label: "เพิ่มลูกค้าด้วย AI", slug: "ai/add-customer" },
           ],
         },
         {
@@ -134,21 +122,44 @@ export default defineConfig({
           items: [{ label: "บันทึกยอดขาย", slug: "sales/sales-records" }],
         },
         {
+          label: "ทีมงาน",
+          items: [
+            { label: "ภาพรวม", slug: "team/overview" },
+            { label: "เพิ่มเพื่อน", slug: "team/add-friend" },
+            { label: "จัดการเพื่อน", slug: "team/manage-friends" },
+            { label: "โครงสร้างสังกัด", slug: "team/org-hierarchy" },
+            { label: "โปรไฟล์ตัวแทน", slug: "team/agent-profile" },
+            { label: "แชร์ให้ทีม", slug: "team/campaign" },
+            {
+              label: "ตัวเลขทีม & ความเป็นส่วนตัว",
+              slug: "team/metrics-and-privacy",
+            },
+          ],
+        },
+        {
+          label: "แพ็คเกจ & พอยต์",
+          items: [
+            { label: "ภาพรวมแพ็คเกจ", slug: "package/overview" },
+            { label: "เติมเงิน", slug: "package/payment" },
+            { label: "ประวัติพอยต์", slug: "package/billing" },
+          ],
+        },
+        {
           label: "นำเข้า / ส่งออก",
           items: [
-            { label: "นำเข้าข้อมูล", slug: "import" },
-            { label: "ส่งออกข้อมูล", slug: "export" },
-            { label: "ใช้ AI ช่วยนำเข้า", slug: "import-ai" },
-            { label: "ใช้ AI ช่วยวิเคราะห์", slug: "export-ai" },
+            { label: "ย้ายข้อมูลเข้า-ออก", slug: "import-export" },
+            { label: "AI ช่วยนำเข้า", slug: "import-ai" },
+            { label: "AI ช่วยวิเคราะห์", slug: "export-ai" },
           ],
         },
         {
           label: "ตั้งค่า",
           items: [
             { label: "ภาพรวมตั้งค่า", slug: "settings/overview" },
-            { label: "ตั้งค่าโปรไฟล์", slug: "settings/profile" },
+            { label: "ข้อมูลส่วนตัว", slug: "settings/profile" },
             { label: "วิธีเข้าสู่ระบบ", slug: "settings/auth-methods" },
             { label: "ตั้งค่าใบเสร็จ", slug: "settings/receipt" },
+            { label: "เชื่อมต่อแอป AI อื่น", slug: "settings/ai-connections" },
           ],
         },
         {
