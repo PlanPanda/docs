@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
     starlight({
       title: "SolidPlan",
       logo: {
-        src: "./src/assets/logo.png",
+        src: "./public/favicon/favicon-96x96.png",
         alt: "SolidPlan Logo",
       },
       head: [
@@ -62,7 +63,7 @@ export default defineConfig({
           tag: "link",
           attrs: {
             rel: "stylesheet",
-            href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+            href: "https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap",
           },
         },
       ],
@@ -72,10 +73,10 @@ export default defineConfig({
         Hero: "./src/components/Hero.astro",
       },
       sidebar: [
-        { label: "🏠 หน้าหลัก", slug: "index" },
-        { label: "🎁 มีอะไรใหม่", slug: "release-notes" },
+        { label: "หน้าหลัก", slug: "index" },
+        { label: "มีอะไรใหม่", slug: "release-notes" },
         {
-          label: "🧭 เริ่มที่นี่",
+          label: "เริ่มที่นี่",
           items: [
             { label: "เริ่มใช้ใน 10 นาที", slug: "start/quick-start" },
             { label: "ภาพรวมระบบ", slug: "start/overview" },
@@ -83,14 +84,14 @@ export default defineConfig({
           ],
         },
         {
-          label: "✅ ใช้งานประจำวัน",
+          label: "ใช้งานประจำวัน",
           items: [
             { label: "Dashboard", slug: "daily/dashboard" },
             { label: "ปฏิทิน", slug: "daily/calendar" },
           ],
         },
         {
-          label: "👥 ลูกค้า",
+          label: "ลูกค้า",
           items: [
             { label: "ภาพรวม", slug: "customers/overview" },
             { label: "รายชื่อลูกค้า", slug: "customers/list" },
@@ -106,7 +107,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "💰 แพ็คเกจ & ใบเสร็จ",
+          label: "แพ็คเกจ & ใบเสร็จ",
           items: [
             { label: "ภาพรวมแพ็คเกจ", slug: "billing/overview" },
             { label: "เติมเงิน", slug: "billing/topup" },
@@ -114,7 +115,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "🤝 ทีมงาน",
+          label: "ทีมงาน",
           items: [
             { label: "ภาพรวม", slug: "team/overview" },
             { label: "แชร์ให้ทีม", slug: "team/campaign" },
@@ -129,11 +130,11 @@ export default defineConfig({
           ],
         },
         {
-          label: "💼 ยอดขาย",
+          label: "ยอดขาย",
           items: [{ label: "บันทึกยอดขาย", slug: "sales/sales-records" }],
         },
         {
-          label: "📦 นำเข้า / ส่งออก",
+          label: "นำเข้า / ส่งออก",
           items: [
             { label: "นำเข้าข้อมูล", slug: "import" },
             { label: "ส่งออกข้อมูล", slug: "export" },
@@ -142,7 +143,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "⚙️ ตั้งค่า",
+          label: "ตั้งค่า",
           items: [
             { label: "ภาพรวมตั้งค่า", slug: "settings/overview" },
             { label: "ตั้งค่าโปรไฟล์", slug: "settings/profile" },
@@ -151,7 +152,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "❓ ช่วยเหลือ",
+          label: "ช่วยเหลือ",
           items: [
             { label: "คำถามที่พบบ่อย", slug: "help/faq" },
             { label: "กิจกรรม 5 ขั้นตอน", slug: "help/5-steps" },
@@ -159,5 +160,6 @@ export default defineConfig({
         },
       ],
     }),
+    icon(),
   ],
 });

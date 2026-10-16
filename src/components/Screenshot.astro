@@ -1,0 +1,61 @@
+---
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+
+interface Props {
+	/** ชื่อไฟล์ (ไม่ต้องมีนามสกุล) เช่น "customers/add-customer-form" — รูปจะถูกอ่านจาก public/images/manual/<name>.png */
+	name: string;
+	/** ข้อความ alt + บอกด้วยว่าต้อง capture อะไรในกรอบ */
+	alt: string;
+	/** รายละเอียดเพิ่มเติมของภาพที่ต้องการ (สถานะหน้าจอ, ตำแหน่งที่ต้องชี้ ฯลฯ) */
+	spec?: string;
+}
+
+const { name, alt, spec } = Astro.props;
+
+const root = process.cwd();
+let src: string | undefined;
+for (const ext of ['png', 'jpg', 'webp']) {
+	if (existsSync(path.join(root, 'public', 'images', 'manual', `${name}.${ext}`))) {
+		src = `/images/manual/${name}.${ext}`;
+		break;
+	}
+}
+---
+
+{
+	src ? (
+		<figure class="sp-screenshot">
+			<img src={src} alt={alt} loading="lazy" decoding="async" />
+			{spec && <figcaption set:html={spec} />}
+		</figure>
+	) : (
+		<div class="screenshot-placeholder">
+			<div>
+				<span class="screenshot-name">public/images/manual/{name}.png</span>
+			</div>
+			<div>ต้องการรูป: {alt}</div>
+			{spec && <div>{spec}</div>}
+		</div>
+	)
+}
+
+<style>
+	.sp-screenshot {
+		margin: 1.5rem 0;
+	}
+
+	.sp-screenshot img {
+		width: 100%;
+		height: auto;
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 8px;
+	}
+
+	.sp-screenshot figcaption {
+		margin-top: 0.5rem;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+		text-align: center;
+	}
+</style>
