@@ -8,18 +8,21 @@ SolidPlan user documentation site — a Starlight (Astro) static site serving as
 
 ## Source Material
 
-The actual usage guide content is authored and maintained at `../smart/docs/` (outside this repo). This Starlight site transforms that content into a publishable docs site.
+The actual usage guide content is authored and maintained at `../smart/knowledge-for-manual/` (outside this repo). This Starlight site syncs that content into a publishable docs site — the knowledge folder is the source of truth for every product page.
 
-The smart/docs structure maps to SolidPlan features:
-- **getting-started.md** — onboarding walkthrough
-- **login.md** — auth flow (signup, login, password reset)
-- **dashboard.md** — yearly heatmap, radar chart, summary stats
-- **calendar.md** — appointment planning
-- **customer/** — customer management (list, detail, add, activities)
-- **package/** — packages, payment (QR PromptPay), billing
-- **team/** — friends, org hierarchy, agent profiles
-- **settings/** — profile, receipt settings
-- **adr/** — architecture decision records for SolidPlan backend
+The knowledge-for-manual structure maps to the docs IA:
+
+- **getting-started.md, login.md** — `src/content/docs/start/`
+- **report.md, calendar.md** — `src/content/docs/daily/` (รายงาน, ปฏิทิน)
+- **customer/** — `src/content/docs/customers/` (overview, add, list, detail, activities, policies, documents)
+- **ai/** — `src/content/docs/ai/` (assistant, search, birthday-card, policy-from-file, add-customer)
+- **package/** — `src/content/docs/package/` (overview, payment, billing)
+- **sales/** — `src/content/docs/sales/sales-records.mdx`
+- **team/** — `src/content/docs/team/`
+- **settings/** — `src/content/docs/settings/`
+- **import_export/** — `src/content/docs/import-export.mdx`, `import-ai.mdx`, `export-ai.mdx`
+
+Terminology standard: `GLOSSARY.md` at repo root. Every page must use these exact terms (ผู้มุ่งหวัง vs ลูกค้า, พอยต์, ทีมโค้ด, การ์ดยืนยัน ฯลฯ).
 
 ## Commands
 
@@ -33,16 +36,31 @@ pnpm preview   # Preview production build locally
 
 - **Framework:** Astro 6 + Starlight (docs-focused framework)
 - **Content:** MDX/Markdown files in `src/content/docs/`
-- **Content config:** `src/content.config.ts` — uses Starlight's `docsLoader` and `docsSchema`
-- **Site config:** `astro.config.mjs` — Starlight integration, sidebar, social links
+- **Site config:** `astro.config.mjs` — Starlight integration, sidebar, fonts (Sarabun), logo
+- **Theme:** `src/styles/custom.css` — black & white design system aligned with the home site; see `DESIGN.md`
+- **Icons:** Lucide via `astro-icon` — use `<Icon name="lucide:<kebab-name>" />` (import `{ Icon }` from `astro-icon/components`). Verify names exist in `@iconify-json/lucide` before use.
 - **Package manager:** pnpm
+
+## Screenshots workflow
+
+Pages embed screenshots through `src/components/Screenshot.astro`:
+
+```mdx
+import Screenshot from '../../../components/Screenshot.astro'; // 3 levels up from subfolder pages
+<Screenshot name="customers/list-search" alt="สิ่งที่ต้อง capture" spec="สถานะหน้าจอที่ต้องเตรียม (ถ้ามี)" />
+```
+
+- At build time, if `public/images/manual/<name>.png` (or `.jpg`/`.webp`) exists it is rendered; otherwise a placeholder shows the target filename and capture spec.
+- To fulfill a slot, drop the capture into `public/images/manual/` with exactly that filename. Current open slots: run `grep -r "Screenshot name=" src/content/docs` or see the capture list maintained in the repo.
+- Import depth: subfolder pages (`daily/`, `customers/`, `ai/`, `team/`, `sales/`, `settings/`, `start/`, `help/`, `package/`) use `../../../components/...`; root-level pages (`import-export.mdx` ฯลฯ) use `../../components/...`.
 
 ## Key Conventions
 
 - Starlight auto-routes based on file path: `src/content/docs/guides/example.md` → `/guides/example/`
-- Sidebar is manually configured in `astro.config.mjs` (not auto-generated)
-- Images go in `src/assets/` (processed by Astro) or `public/` (static)
-- Content files use frontmatter: `title`, `description`, and optional `template`
+- Sidebar is manually configured in `astro.config.mjs` (not auto-generated); when adding/renaming pages, update it in the same commit
+- Internal content links are absolute with trailing slash: `[เติมเงิน](/package/payment/)`
+- Callouts use Starlight asides: `:::note[หัวข้อ]` / `:::tip[เคล็ดลับ]`
+- Content files use frontmatter: `title`, `description`
 
 ## Brand Positioning
 
