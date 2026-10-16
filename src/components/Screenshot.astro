@@ -1,9 +1,8 @@
 ---
-import { existsSync } from 'node:fs';
-import path from 'node:path';
+import { Image, type ImageMetadata } from 'astro:assets';
 
 interface Props {
-	/** ชื่อไฟล์ (ไม่ต้องมีนามสกุล) เช่น "customers/add-customer-form" — รูปจะถูกอ่านจาก public/images/manual/<name>.png */
+	/** ชื่อไฟล์ (ไม่ต้องมีนามสกุล) เช่น "customers/list-overview" — รูปจะถูกอ่านจาก src/assets/manual/<name>.png */
 	name: string;
 	/** ข้อความ alt + บอกด้วยว่าต้อง capture อะไรในกรอบ */
 	alt: string;
@@ -13,26 +12,32 @@ interface Props {
 
 const { name, alt, spec } = Astro.props;
 
-const root = process.cwd();
-let src: string | undefined;
-for (const ext of ['png', 'jpg', 'webp']) {
-	if (existsSync(path.join(root, 'public', 'images', 'manual', `${name}.${ext}`))) {
-		src = `/images/manual/${name}.${ext}`;
-		break;
-	}
-}
+// รูปคู่มือทั้งหมดอยู่ที่ src/assets/manual/<กลุ่ม>/<ชื่อ>.png — glob แบบ eager
+// ให้ได้ ImageMetadata ต่อไฟล์ แล้วหาจากชื่อ; ไฟล์ที่ยังไม่มี = ไม่อยู่ใน map = เข้า placeholder
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/manual/**/*.png', {
+	eager: true,
+});
+const src = Object.entries(images).find(([key]) => key.endsWith(`/${name}.png`))?.[1].default;
 ---
 
 {
 	src ? (
 		<figure class="sp-screenshot">
-			<img src={src} alt={alt} loading="lazy" decoding="async" />
+			<Image
+				src={src}
+				alt={alt}
+				widths={[640, 960, 1280]}
+				sizes="(min-width: 50rem) 45rem, 100vw"
+				format="webp"
+				loading="lazy"
+				decoding="async"
+			/>
 			{spec && <figcaption set:html={spec} />}
 		</figure>
 	) : (
 		<div class="screenshot-placeholder">
 			<div>
-				<span class="screenshot-name">public/images/manual/{name}.png</span>
+				<span class="screenshot-name">src/assets/manual/{name}.png</span>
 			</div>
 			<div>ต้องการรูป: {alt}</div>
 			{spec && <div>{spec}</div>}

@@ -5,9 +5,9 @@
 ## วิธีส่งรูป
 
 1. Capture ตามสเปคในตารางด้านล่าง (โหมด **light** ของแอป, หน้าจอเดสก์ท็อป/แท็บเล็ตแนวนอน, บันทึกเป็น **PNG**)
-2. ตั้งชื่อไฟล์ตรงตามคอลัมน์ "ชื่อไฟล์" แล้ววางใน `docs/public/images/manual/`
-   เช่น ชื่อไฟล์ `customers/list-overview` → วางเป็น `public/images/manual/customers/list-overview.png` (สร้างโฟลเดอร์ตามหมวดด้วย)
-3. รัน `pnpm dev` หรือ `pnpm build` อีกครั้ง — รูปจะขึ้นแทน placeholder อัตโนมัติ
+2. ตั้งชื่อไฟล์ตรงตามคอลัมน์ "ชื่อไฟล์" แล้ววางใน `docs/src/assets/manual/`
+   เช่น ชื่อไฟล์ `customers/list-overview` → วางเป็น `src/assets/manual/customers/list-overview.png` (สร้างโฟลเดอร์ตามหมวดด้วย)
+3. รัน `pnpm dev` หรือ `pnpm build` อีกครั้ง — รูปจะขึ้นแทน placeholder อัตโนมัติ (Astro แปลงเป็น WebP + สร้าง srcset ให้เองตอน build)
 
 จุดที่ยังไม่มีรูปจะแสดงเป็นกล่องประบอกพร้อมชื่อไฟล์ + สเปคในหน้าเว็บอยู่แล้ว จับคู่ง่าย ๆ ว่าหน้าไหนขาดตัวไหน
 

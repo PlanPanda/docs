@@ -50,7 +50,7 @@ components:
   links: "Content links underlined with hairline underline; underline turns ink on hover. Accent text = ink (light) / #f5f5f7 (dark)."
   cards: "Homepage category cards (.sp-card): flat hairline frame, radius 8px, Lucide icon + bold title + one-line description, border darkens to ink on hover."
   callouts: "Starlight asides :::note / :::tip (semantic colors kept for meaning)."
-  screenshots: "Screenshot.astro — real capture in a hairline 8px frame; missing captures render a dashed placeholder showing the target filename in public/images/manual/."
+  screenshots: "Screenshot.astro — real capture in a hairline 8px frame; missing captures render a dashed placeholder showing the target filename in src/assets/manual/."
   hero: "Custom Hero.astro — centered text hero, primary + minimal actions, Solid mascot below (light variant / dark variant swap)."
 
 icons:

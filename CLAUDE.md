@@ -50,8 +50,8 @@ import Screenshot from '../../../components/Screenshot.astro'; // 3 levels up fr
 <Screenshot name="customers/list-search" alt="สิ่งที่ต้อง capture" spec="สถานะหน้าจอที่ต้องเตรียม (ถ้ามี)" />
 ```
 
-- At build time, if `public/images/manual/<name>.png` (or `.jpg`/`.webp`) exists it is rendered; otherwise a placeholder shows the target filename and capture spec.
-- To fulfill a slot, drop the capture into `public/images/manual/` with exactly that filename. Current open slots: run `grep -r "Screenshot name=" src/content/docs` or see the capture list maintained in the repo.
+- At build time, if `src/assets/manual/<name>.png` exists it is rendered through `astro:assets` (WebP + srcset); otherwise a placeholder shows the target filename and capture spec.
+- To fulfill a slot, drop the capture into `src/assets/manual/` with exactly that filename. Current open slots: run `grep -r "Screenshot name=" src/content/docs` or see the capture list maintained in the repo.
 - Import depth: subfolder pages (`daily/`, `customers/`, `ai/`, `team/`, `sales/`, `settings/`, `start/`, `help/`, `package/`) use `../../../components/...`; root-level pages (`import-export.mdx` ฯลฯ) use `../../components/...`.
 
 ## Key Conventions
