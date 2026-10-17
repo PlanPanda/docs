@@ -53,6 +53,7 @@ import Screenshot from '../../../components/Screenshot.astro'; // 3 levels up fr
 - At build time, if `src/assets/manual/<name>.png` exists it is rendered through `astro:assets` (WebP + srcset); otherwise a placeholder shows the target filename and capture spec.
 - To fulfill a slot, drop the capture into `src/assets/manual/` with exactly that filename. Current open slots: run `grep -r "Screenshot name=" src/content/docs` or see the capture list maintained in the repo.
 - Import depth: subfolder pages (`daily/`, `customers/`, `ai/`, `team/`, `sales/`, `settings/`, `start/`, `help/`, `package/`) use `../../../components/...`; root-level pages (`import-export.mdx` ฯลฯ) use `../../components/...`.
+- Full capture/insertion reference (English): `ai-plan/manual-screenshots.md` — slot registry, capture environment/mechanics, guided-link arrows (`ai-plan/guided-links.md`), demo-data seeding, and open-slot status. Canonical copies also live at `../smart/ai-note/`.
 
 ## Key Conventions
 
