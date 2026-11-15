@@ -165,8 +165,7 @@ Do #7 and #8 together, last, and restore the package and auto-select straight af
 3. Data-writing capture: A6, then clean up.
 4. Package-state captures: A7, A8, then restore the package and auto-select.
 
-Still blocked from earlier rounds (unchanged): the 4 chat-card slots, `team/add-friend-request-bell`,
-and `settings/ai-key-page` / `ai-oauth-page`. The last two are capturable anytime.
+The 7 slots blocked in earlier rounds were captured later the same day; see section E.
 
 ### D. How this round was captured (reuse next time)
 
@@ -191,7 +190,30 @@ and `settings/ai-key-page` / `ai-oauth-page`. The last two are capturable anytim
   closed the form and pressed it again to restore (verified). Now **76/83 captured**.
 - Import `files[]` entries accept `id`, `url`, `fileName`, `category` (not `name`).
 
-## Status (2026-10-17): 65/73 slots captured
+### E. Last 7 slots (2026-11-15, evening): 83/83 captured
+
+- **Chat cards** (`ai/search-results`, `ai/policy-confirm-card`, `ai/birthday-card-example`,
+  `ai/add-customer-avatar-confirm`) were made with the **real AI chat** on the local app. The
+  local build has the cards that dev lacked. Helper: type and send, attach files by
+  `DataTransfer` injection, then poll until `[data-testid=confirm-card]` appears or the
+  composer shows "พร้อม". Recapture later from `/ai-chat?c=<id>` with
+  `page.route('**/api/ai-chat/messages', abort)` so nothing can be sent or approved.
+  Hide the idle mascot with `.avatar-position{visibility:hidden}`.
+- Policy source file: a synthetic Thai policy table rendered to PNG by headless Chromium
+  (fictional insurer "บริษัท ตัวอย่างประกันชีวิต"). The card was never confirmed.
+- **Side effects that persist:** the birthday-card skill attaches the PNG to สมชาย สุขสม's files
+  (documented behaviour). The avatar flow **created a prospect "พี่แดง"** (create_customer runs
+  without a card), and the avatar card was left unconfirmed. There are also 5 test chat
+  conversations. Clean these up or keep them as demo data.
+- **Settings Key/OAuth** and **friend-request bell/menu**: the browser's GET responses were
+  replaced via `page.route` (`api/settings/api-keys`, `api/settings/mcp-connections`,
+  `api/friends/requests`) and every write was aborted. The MCP URL was swapped on screen
+  to `https://app.solidplan.ai/mcp`. No keys, connections or requests exist server-side.
+- `team/manage-friends-requests` was retaken with the menu open (the old crop had no menu).
+- The bell badge is **dark blue, not red**, so the docs now say "ตัวเลขจำนวนคำขอ". The source
+  `knowledge-for-manual/team/{add-friend,manage-friends}.md` still says ตัวเลขแดง.
+
+## Status (2026-10-17): 65/73 slots captured (historical)
 
 Open slots and their blockers:
 
