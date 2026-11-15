@@ -123,7 +123,7 @@ https://dev.solidplan.ai/<path>?anno=1&arrow1target=<css-selector>&arrow1label=1
 
 ## Capture plan (2026-11-15): knowledge sync for AI levels, birthday without year, customer limit, JSON import/export
 
-The 2026-11-15 sync added 8 new slots and made 9 existing PNGs stale. Status: **66/81 PNGs exist, 9 of them stale**.
+The 2026-11-15 sync added 8 new slots and made 9 existing PNGs stale. Status after this round: **74/81 captured, none stale** (all of A, and all of B except `ai/assistant-overview`, which already showed the level button).
 
 **Environment for this round:** the local app at **http://127.0.0.1:3333** runs the new
 features; dev may not yet. Same rules as above: demo/synthetic data only, light theme,
@@ -167,6 +167,29 @@ Do #7 and #8 together, last, and restore the package and auto-select straight af
 
 Still blocked from earlier rounds (unchanged): the 4 chat-card slots, `team/add-friend-request-bell`,
 and `settings/ai-key-page` / `ai-oauth-page`. The last two are capturable anytime.
+
+### D. How this round was captured (reuse next time)
+
+- **Driver:** `playwright-core` (installed in a scratch folder, not in this repo) with the
+  cached Chromium in `~/Library/Caches/ms-playwright/chromium-1255`, headless, 1280×720
+  (taller viewport + `clip` for long forms), light theme. This gives true 1280-wide PNGs;
+  the in-app browser pane only returns scaled 800×450 images.
+- **Arrows on every new figure** use the app's own overlay with **freeform** params:
+  measure the target's rect first, then load `?anno=1&arrowNhead=x,y&arrowNtail=…`
+  (px) with the tail on a chosen side. Most settings/import controls have no
+  `data-testid`, and selector arrows let the app choose the badge side, which covered
+  nearby text. The badge always sits ~44px behind the head; the tail only sets direction.
+  For text targets measure with a `Range` over the text, not the block's box.
+- **No real data changed:** profile phone/nickname were swapped on screen only
+  (`input.value` without events, so autosave never fires); A2 cleared the year and set the
+  label to the app's own "วันเกิด (เว้นปีได้)" string on screen only; A5 was never
+  confirmed; A6 used one synthetic customer whose file URL 404s, so the row rolled back
+  (verified: search returns 0); A7/A8 rewrote only the browser's `packages/current`
+  response via `page.route` (`limitWarning` / `isAtLimit`). The package was never switched.
+- Added later the same day: `sales/activity-closing-toggle` and `sales/records-from-activity`
+  (sale recorded from an activity card). Pressing ปิดการขาย saves the stage, so the capture
+  closed the form and pressed it again to restore (verified). Now **76/83 captured**.
+- Import `files[]` entries accept `id`, `url`, `fileName`, `category` (not `name`).
 
 ## Status (2026-10-17): 65/73 slots captured
 
