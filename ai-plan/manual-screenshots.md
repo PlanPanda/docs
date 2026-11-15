@@ -121,6 +121,53 @@ https://dev.solidplan.ai/<path>?anno=1&arrow1target=<css-selector>&arrow1label=1
 - Commit straight to `main` (established convention for this repo), then post a
   progress comment on docs#1 with the updated counts.
 
+## Capture plan (2026-11-15): knowledge sync for AI levels, birthday without year, customer limit, JSON import/export
+
+The 2026-11-15 sync added 8 new slots and made 9 existing PNGs stale. Status: **66/81 PNGs exist, 9 of them stale**.
+
+**Environment for this round:** the local app at **http://127.0.0.1:3333** runs the new
+features; dev may not yet. Same rules as above: demo/synthetic data only, light theme,
+1280×720. Log in once in the capture browser, and never log out.
+
+### A. New slots (no PNG yet)
+
+| # | Slot | Route / how | State to prepare |
+|---|---|---|---|
+| 1 | `ai/assistant-intelligence-level` | ผู้ช่วย AI → ปุ่ม ✨ มุมล่างขวาของกล่องพิมพ์ | menu open, all 4 levels visible (อัตโนมัติ ✓) |
+| 2 | `customers/detail-birthday-fields` | customer full page → ส่วนตัว → แก้ไข | day+month filled, year empty → header "วันเกิด (เว้นปีได้)". **Reload to discard, don't save** |
+| 3 | `settings/profile-call-consent` | ตั้งค่า → ข้อมูลส่วนตัว | demo account has a phone number; crop to phone field + switch |
+| 4 | `import-export/import-screen` | `/settings/import` | empty state: step 1 buttons + drop zone |
+| 5 | `import-export/import-preview` | `/settings/import` → inject JSON via `input[type=file]` DataTransfer | file with 1 new customer + 1 existing `id` + a duplicate ชื่อเรียก (warning). **Don't confirm** |
+| 6 | `import-export/import-result` | same, then ยืนยันนำเข้า | file with 1 new customer whose `files[0].url` returns 404 → ล้มเหลว + ดาวน์โหลดไฟล์ที่เหลือ. **This writes data.** The failed customer is rolled back, but any successful rows persist, so use a single-customer file and delete leftovers afterwards |
+| 7 | `package/customer-limit-banner` | `/customers` | needs auto-package **OFF** + customers ≥ 90% of the plan limit. Easiest: switch the demo account to แพ็คเกจฟรี (check the limit) with auto off. Restore afterwards |
+| 8 | `customers/add-limit-reached` | `/customers` → เพิ่มลูกค้า | same as #7 but at 100% → dialog "ลูกค้าเต็มแพ็คเกจแล้ว" + อัปเกรดแพ็คเกจ |
+
+Do #7 and #8 together, last, and restore the package and auto-select straight after.
+
+### B. Stale PNGs (UI changed, retake with the same filename)
+
+| Slot | Why |
+|---|---|
+| `import-export/export-screen` | page redesigned: single **ดาวน์โหลด JSON**, 5 counts, step 2 |
+| `export-ai/export-download` | same page, crop to step 1 |
+| `export-ai/field-copy` | now a dialog: **คำอธิบายไฟล์ เพื่อให้ AI เข้าใจ** (ดาวน์โหลด / คัดลอก) |
+| `import-ai/prepare-prompt` | now a dialog: **คำอธิบาย เพื่อให้ AI สร้างไฟล์ได้ถูกต้อง** |
+| `team/campaign-team-code`, `team/add-friend-team-code` | menu/page renamed โค้ดสร้างทีม → **ชวนเพื่อน** |
+| `settings/overview-menu` | menu label ชวนเพื่อน; export/import order |
+| `settings/profile-form` | consent switch now under เบอร์โทร |
+| `customers/add-edit-personal`, `customers/detail-full` | birthday is now 3 fields (วัน/เดือน/ปี) |
+| `ai/assistant-overview` | composer shows the ✨ level button instead of เลือกรุ่น AI. Retake only if visible in the crop |
+
+### C. Order (fewest state changes first)
+
+1. Read-only captures: A1, A3, A4, all of B.
+2. Unsaved-edit captures: A2, A5 (reload to discard).
+3. Data-writing capture: A6, then clean up.
+4. Package-state captures: A7, A8, then restore the package and auto-select.
+
+Still blocked from earlier rounds (unchanged): the 4 chat-card slots, `team/add-friend-request-bell`,
+and `settings/ai-key-page` / `ai-oauth-page`. The last two are capturable anytime.
+
 ## Status (2026-10-17): 65/73 slots captured
 
 Open slots and their blockers:
