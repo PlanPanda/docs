@@ -119,7 +119,10 @@ export default defineConfig({
         },
         {
           label: "ยอดขาย",
-          items: [{ label: "บันทึกยอดขาย", slug: "sales/sales-records" }],
+          items: [
+            { label: "บันทึกยอดขาย", slug: "sales/sales-records" },
+            { label: "บันทึกยอดผ่านกิจกรรม", slug: "sales/sales-from-activity" },
+          ],
         },
         {
           label: "ทีมงาน",

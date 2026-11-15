@@ -17,7 +17,7 @@ The knowledge-for-manual structure maps to the docs IA:
 - **customer/** — `src/content/docs/customers/` (overview, add, list, detail, activities, policies, documents)
 - **ai/** — `src/content/docs/ai/` (assistant, search, birthday-card, policy-from-file, add-customer)
 - **package/** — `src/content/docs/package/` (overview, payment, billing)
-- **sales/** — `src/content/docs/sales/sales-records.mdx`
+- **sales/** — `src/content/docs/sales/sales-records.mdx`, `sales-from-activity.mdx`
 - **team/** — `src/content/docs/team/`
 - **settings/** — `src/content/docs/settings/`
 - **import_export/** — `src/content/docs/import-export.mdx`, `import-ai.mdx`, `export-ai.mdx`
